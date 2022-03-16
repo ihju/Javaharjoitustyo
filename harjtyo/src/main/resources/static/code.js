@@ -9,10 +9,11 @@ document.querySelector("button")
     e.preventDefault()
 
     //Creating blog object from the form information
-    let opiskelija = {
+    let opiskelijat = {
         etunimi: document.getElementById("etn").value,
-        sukunimi: document.getElementById("skn").value
+        sukunimi: document.getElementById("skn").value,
         osoite: document.getElementById("oso").value
+
     }
 
     //Posting the object as JSON to server
@@ -24,7 +25,7 @@ document.querySelector("button")
               'Content-Type': 'application/json'
             },
             method: "POST",
-            body: JSON.stringify(opiskelija)
+            body: JSON.stringify(opiskelijat)
         })
         .then(resp => getOpiskelijat())
 })
